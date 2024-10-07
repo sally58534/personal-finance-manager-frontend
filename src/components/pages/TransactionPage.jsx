@@ -95,13 +95,19 @@ const TransactionPage = () => {
           ]}
         />
       )}
-      <TransactionTable transactions={transactionsState} />
-      <CardCointainer>
-        <CardGrid>
-          <PieChart transactions={transactions} />
-          <BarChartByCategory transactions={transactions} />
-        </CardGrid>
-      </CardCointainer>
+      {!!transactionsState.length ? (
+        <>
+          <TransactionTable transactions={transactionsState} />
+          <CardCointainer>
+            <CardGrid>
+              <PieChart transactions={transactions} />
+              <BarChartByCategory transactions={transactions} />
+            </CardGrid>
+          </CardCointainer>
+        </>
+      ) : (
+        <div>No Transaction data yet</div>
+      )}
       <BankAccounts accounts={accounts} />
     </Page>
   );

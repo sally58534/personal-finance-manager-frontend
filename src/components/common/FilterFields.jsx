@@ -36,18 +36,16 @@ const FilterFields = ({ categories, onFilter }) => {
   };
 
   return (
-    <div className="bg-white w-full p-6 rounded-lg shadow-md mb-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-white dark:bg-gray-900 w-full p-6 rounded-lg shadow-md mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {/* Date Fields */}
         <div>
-          <label className="block text-gray-700 font-semibold mb-2">
-            Date From
-          </label>
+          <label className="block font-semibold mb-2">Date From</label>
           <input
             type="date"
             value={fromDate}
             onChange={(e) => setFromDate(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white black"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-inherit"
           />
         </div>
         <div>
@@ -58,7 +56,7 @@ const FilterFields = ({ categories, onFilter }) => {
             type="date"
             value={toDate}
             onChange={(e) => setToDate(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-inherit"
           />
         </div>
 
@@ -70,7 +68,7 @@ const FilterFields = ({ categories, onFilter }) => {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-inherit"
           >
             <option value="">Select a category</option>
             {categories.map((cat, index) => (
@@ -91,7 +89,7 @@ const FilterFields = ({ categories, onFilter }) => {
             value={minAmount}
             onChange={(e) => setMinAmount(e.target.value)}
             placeholder="Min amount"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none bg-inherit focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div>
@@ -103,7 +101,7 @@ const FilterFields = ({ categories, onFilter }) => {
             value={maxAmount}
             onChange={(e) => setMaxAmount(e.target.value)}
             placeholder="Max amount"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none bg-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none bg-inherit focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
@@ -118,7 +116,7 @@ const FilterFields = ({ categories, onFilter }) => {
         </button>
         <button
           onClick={resetFilters}
-          className="w-1/3 bg-white text-gray-500 border-white border-none font-bold px-4 py-2 outline"
+          className="w-1/3 bg-inherit text-gray-500 border-white border-none font-bold px-4 py-2 outline"
         >
           Reset Filters
         </button>

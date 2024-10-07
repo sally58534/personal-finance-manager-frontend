@@ -21,11 +21,13 @@ ChartJS.register(
 
 const BarChartByCategory = ({ transactions }) => {
   const groupedTransactions = transactions.reduce((acc, transaction) => {
-    const category = transaction.category[0];
-    if (!acc[category]) {
-      acc[category] = 0;
+    const category = transaction?.category?.[0];
+    if (!!category) {
+      if (!acc[category]) {
+        acc[category] = 0;
+      }
+      acc[category] += -transaction.amount > 0 ? 0 : transaction.amount;
     }
-    acc[category] += -transaction.amount > 0 ? 0 : transaction.amount;
     return acc;
   }, {});
 
@@ -53,7 +55,7 @@ const BarChartByCategory = ({ transactions }) => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 shadow-lg rounded-lg mt-6">
+    <div className="w-full max-w-3xl mx-auto p-6 shadow-lg rounded-lg mt-6 dark:shadow-slate-600">
       <Bar data={data} options={options} />
     </div>
   );

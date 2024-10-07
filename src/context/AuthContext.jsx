@@ -1,4 +1,3 @@
-// src/context/AuthContext.jsx
 import React, { createContext, useState, useEffect } from "react";
 import * as jwt_decode from "jwt-decode"; // Ensure this is installed via 'yarn add jwt-decode'
 
@@ -17,6 +16,8 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     localStorage.removeItem("jwtToken");
+    sessionStorage.removeItem("bankAccounts");
+    sessionStorage.removeItem("transactions");
     setIsAuthenticated(false);
     console.log("User logged out");
   };

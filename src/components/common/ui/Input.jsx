@@ -1,4 +1,3 @@
-// src/components/common/ui/Input.jsx
 import React from "react";
 import "../../../styles/Input.css";
 

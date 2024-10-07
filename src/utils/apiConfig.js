@@ -1,8 +1,7 @@
-// src/utils/axiosConfig.js
 import axios from 'axios';
 
 const AuthNest = axios.create({
-  baseURL: 'http://localhost:3000', // Replace with your backend's base URL
+  baseURL: 'http://localhost:3000',
 });
 
 // Add a request interceptor to include the JWT token

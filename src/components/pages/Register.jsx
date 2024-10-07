@@ -1,4 +1,3 @@
-// src/components/Register.jsx
 import React, { useState } from "react";
 import { registerApi } from "../../utils/apis";
 import Page from "../common/Page";

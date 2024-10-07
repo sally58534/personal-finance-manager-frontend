@@ -17,6 +17,7 @@ const BankAccounts = ({ accounts }) => {
         (account) => account.account_id
       );
       const response = await retrieveTransactions(account.id, accountIds);
+      
       hideSpinner();
       navigate("/transactions", {
         state: { transactions: response?.transactions, accounts },
@@ -32,7 +33,7 @@ const BankAccounts = ({ accounts }) => {
         {accounts.map((account, idx) => (
           <div
             key={account.id}
-            className="flex flex-col shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer active:scale-95"
+            className="flex flex-col shadow-lg dark:shadow-slate-600 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer active:scale-95"
             onClick={() => goToBankAccountPage(account)}
           >
             {/* Display institution logo if available */}

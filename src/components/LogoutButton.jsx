@@ -1,4 +1,3 @@
-// src/components/LogoutButton.jsx
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +14,7 @@ function LogoutButton() {
   if (!isAuthenticated) return null;
 
   return (
-    <div className="w-fit">
+    <div className="w-fit text-white">
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

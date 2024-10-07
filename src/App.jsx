@@ -1,5 +1,4 @@
-// src/App.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,10 +14,30 @@ import "./App.css";
 import TransactionPage from "./components/pages/TransactionPage";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
     <Router>
       <div className=" flex w-full justify-end">
         <LogoutButton />
+        <button
+          className="px-4 py-2 bg-gray-800 text-white dark:bg-gray-200 dark:text-black rounded"
+          onClick={toggleDarkMode}
+        >
+          {darkMode ? "Light mode" : "Dark mode"}
+        </button>
       </div>
       <Routes>
         {/* Public Routes */}

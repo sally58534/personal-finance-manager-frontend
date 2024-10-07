@@ -25,6 +25,8 @@ function LinkBankAccount({ updateAccounts }) {
           publicToken: public_token,
         });
         await saveUserBankAccounts();
+        sessionStorage.removeItem("bankAccounts");
+        sessionStorage.removeItem("transactions");
         updateAccounts();
       } catch (error) {
         console.error("Error exchanging public token:", error);

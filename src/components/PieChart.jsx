@@ -27,7 +27,7 @@ const PieChart = ({ transactions }) => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 shadow-lg rounded-lg mt-6">
+    <div className="w-full dark:shadow-slate-600 max-w-md mx-auto p-6 shadow-lg rounded-lg mt-6">
       <Pie data={data} />
     </div>
   );
